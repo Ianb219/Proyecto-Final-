@@ -8,5 +8,5 @@
 # 2) Juan Camilo Diaz Granados Amaya
 # 3) Osman David De La Hoz Hadechiny
 # 4) Brayan Steveen Sandoval Quiroz
-# 5) Jose Andres Vergara Roa
+# 5) Jorge Andres Vergara Roa
    
