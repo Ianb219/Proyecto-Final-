@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://djm17bf8x3m17"]
+
+[ext_resource type="Script" uid="uid://cjh5ssyaa8wi6" path="res://script/split_container.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b7b0vrfhosxcy" path="res://scenes/world.tscn" id="2_y33l4"]
+
+[node name="Split_container" type="HBoxContainer"]
+offset_right = 1150.0
+offset_bottom = 647.0
+scale = Vector2(1.00172, 0.999976)
+script = ExtResource("1_0wfyh")
+
+[node name="container1" type="SubViewportContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewport" type="SubViewport" parent="container1"]
+handle_input_locally = false
+size = Vector2i(580, 650)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="container1/SubViewport"]
+limit_left = -600
+limit_top = -480
+limit_right = 1970
+limit_bottom = 1700
+
+[node name="world" parent="container1/SubViewport" instance=ExtResource("2_y33l4")]
+
+[node name="container2" type="SubViewportContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewport" type="SubViewport" parent="container2"]
+handle_input_locally = false
+size = Vector2i(580, 650)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="container2/SubViewport"]
+limit_left = -600
+limit_top = -480
+limit_right = 1970
+limit_bottom = 1700

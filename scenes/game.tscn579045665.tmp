@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://0ne6j17te2jo"]
+
+[ext_resource type="PackedScene" uid="uid://b7b0vrfhosxcy" path="res://scenes/world.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dv1ceoh31keno" path="res://scenes/player.tscn" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://d1mvmhtaog37j" path="res://script/player.gd" id="3_lbhrr"]
+[ext_resource type="Script" uid="uid://7w0tgc5bks4m" path="res://script/player2.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://db03dkowomb5d" path="res://scenes/placa.tscn" id="5_p57ef"]
+[ext_resource type="Script" uid="uid://bsyugwv4hko43" path="res://scenes/placa.gd" id="6_u5sy4"]
+
+[node name="Game" type="Node2D"]
+
+[node name="world" parent="." instance=ExtResource("1_yqjtg")]
+scale = Vector2(1.20475, 1.23866)
+
+[node name="Player2" parent="world" instance=ExtResource("2_lnu2h")]
+texture_filter = 1
+position = Vector2(1256.69, 979.284)
+scale = Vector2(0.360242, 0.468259)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_iywne")
+
+[node name="Player" parent="world" instance=ExtResource("2_lnu2h")]
+position = Vector2(329.529, 101.723)
+scale = Vector2(0.441094, 0.380121)
+script = ExtResource("3_lbhrr")
+
+[node name="Placa" parent="world" instance=ExtResource("5_p57ef")]
+position = Vector2(787.715, -14.5318)
+scale = Vector2(0.830048, 0.807324)
+script = ExtResource("6_u5sy4")
+
+[connection signal="body_entered" from="world/Placa" to="world/Placa" method="_on_body_entered"]
